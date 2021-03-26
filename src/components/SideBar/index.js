@@ -6,6 +6,7 @@ import Order from './Order'
 
 const Sidebar = ({isOpen, toggle}) => {
     return (
+        <Router>
         <SidebarContainer isOpen={isOpen} onclick={toggle}>
             <Icon>
                 <CloseIcon isOpen={!isOpen} onClick={toggle}/>
@@ -16,9 +17,10 @@ const Sidebar = ({isOpen, toggle}) => {
                 <SidebarLink to="/">Confirmation</SidebarLink>
             </SidebarMenu>
             <SideBtnWrap>
-                <SidebarRoute path='/order' component={Order}>Order Now</SidebarRoute>
+                <SidebarRoute to='/'>Order Here</SidebarRoute>
             </SideBtnWrap>
         </SidebarContainer>
+        </Router>
     )
 }
 
